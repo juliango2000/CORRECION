@@ -1,0 +1,62 @@
+<html>
+<head>
+<title>Administracion</title>
+<style>
+    table, th, td {
+      border: 1px solid black;
+    }
+</style>
+</head>
+<body>
+    <div >
+        <form action="/cuenta" method="GET">
+            <input type="hidden" name="username" id="username" value="{{administrador}}">
+            <input type="submit" value="Cuenta">
+        
+        </form>
+
+
+    </div>
+    <table >
+        <tr>
+          <th>Usuario</th>
+          <th>Contraseña</th>
+          <th>Nombre</th>
+          <th>Dinero</th>
+          <th>Administrador</th>
+          <th>Acciones</th>
+        </tr>
+
+
+        
+
+        {%for i in n%}
+        <tr>
+            {%for atributo in usuarios[i]%}
+            <td>
+                {{atributo}}
+            </td>
+            {%endfor%}
+            {%if usuarios[i][0]!=administrador%}
+            <td>
+                <form action="/alta" method="POST">
+                    <input type="hidden" name="username" id="username" value="{{usuarios[i][0]}}">
+                    <input type="hidden" name="administrador" id="administrador" value="{{administrador}}">
+                    <input type="submit" value="Alta">
+                </form>
+            
+                <form action="/eliminar" method="POST">
+                    <input type="hidden" name="username" id="username" value="{{usuarios[i][0]}}">
+                    <input type="hidden" name="administrador" id="administrador" value="{{administrador}}">
+                    <input type="submit" value="Eliminar">
+                </form>
+            </td>
+            {%endif%}
+        </tr>
+        
+        {%endfor%}
+      </table>
+
+    
+</body>
+</html>
