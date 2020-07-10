@@ -3,6 +3,22 @@
         <title>Cuenta</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!--===============================================================================================-->
+<script src="../static/vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="../static/vendor/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+	<script src="../static/vendor/bootstrap/js/popper.js"></script>
+	<script src="../static/vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="../static/vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="../static/vendor/daterangepicker/moment.min.js"></script>
+	<script src="../static/vendor/daterangepicker/daterangepicker.js"></script>
+<!--===============================================================================================-->
+	<script src="../static/vendor/countdowntime/countdowntime.js"></script>
+<!--===============================================================================================-->
+	<script src="../static/js/main.js"></script>
       <!--===============================================================================================-->	
         <link rel="icon" type="image/png" href="../static/images/icons/favicon.ico"/>
       <!--===============================================================================================-->
@@ -30,49 +46,39 @@
     
 <div class="limiter">
     <div class="container-login100" style="background-image: url('../static/images/bg-01.jpg');">
-<h2>Su saldo actual es: </h2>{{saldo}}
-<br>
 
+<div class="row">      <h2>Su saldo actual es: ${{saldo}}</h2>
+</div>
+<br>
+<div>
 <form action="/+saldo?username={{usuario}}" method="POST">
     <label for="username">Cantidad a ingresar: </label><br>
     <input type="text" id="sal" name="sal"><br>
     
-    <input type="submit" value="Submit">
+    <input type="submit" value="Agregar">
 </form>
-
+</div>
+<div class="row">
 <form action="/-saldo?username={{usuario}}" method="POST">
     <label for="username">Cantidad a restar: </label><br>
     <input type="text" id="sal" name="sal"><br>
     
-    <input type="submit" value="Submit">
+    <input type="submit" value="Restar">
 </form>
+</div>
 <br>
 <br>
-
+<div>
 <form action="/administracion" method="GET">
     <input type="hidden" name="username" id="username" value="{{usuario}}">
     <input type="submit" value="Administrador">
 </form>
 </div>
 </div>
+</div>
 
 
 
-<!--===============================================================================================-->
-<script src="../static/vendor/jquery/jquery-3.2.1.min.js"></script>
-<!--===============================================================================================-->
-	<script src="../static/vendor/animsition/js/animsition.min.js"></script>
-<!--===============================================================================================-->
-	<script src="../static/vendor/bootstrap/js/popper.js"></script>
-	<script src="../static/vendor/bootstrap/js/bootstrap.min.js"></script>
-<!--===============================================================================================-->
-	<script src="../static/vendor/select2/select2.min.js"></script>
-<!--===============================================================================================-->
-	<script src="../static/vendor/daterangepicker/moment.min.js"></script>
-	<script src="../static/vendor/daterangepicker/daterangepicker.js"></script>
-<!--===============================================================================================-->
-	<script src="../static/vendor/countdowntime/countdowntime.js"></script>
-<!--===============================================================================================-->
-	<script src="../static/js/main.js"></script>
+
 </body>
 </html>
